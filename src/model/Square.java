@@ -1,6 +1,8 @@
 package model;
 
-public class Square extends Rectangle {
+import interfaces.Colorable;
+
+public class Square extends Rectangle implements Colorable {
 
     public Square(){
         super.setWidth(1);
@@ -34,4 +36,8 @@ public class Square extends Rectangle {
                 + super.toString();
     }
 
+    @Override
+    public void howToColor() {
+        System.out.println("Color all four side");
+    }
 }
