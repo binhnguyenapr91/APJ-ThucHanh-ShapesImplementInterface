@@ -1,6 +1,8 @@
 package model;
 
-public class Rectangle extends Shape {
+import interfaces.Resizeable;
+
+public class Rectangle extends Shape implements Resizeable {
     private double width;
     private double length;
 
@@ -50,5 +52,11 @@ public class Rectangle extends Shape {
                 + length
                 + ", which is a subclass of "
                 + super.toString();
+    }
+
+    @Override
+    public void resize(double percent) {
+        this.length = this.length*percent/100;
+        this.width = this.width*percent/100;
     }
 }
